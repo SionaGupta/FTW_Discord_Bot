@@ -37,3 +37,5 @@ def send_message():
         client.run(TOKEN)
     except Exception as e:
         print(f"🔥 Failed to connect: {e}")
+
+send_message()
