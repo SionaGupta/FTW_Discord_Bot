@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Get the API key
-api_key = os.getenv("API_KEY")
+d_api_key = os.getenv("DISCORD_API_KEY")
 
 # Print it
-print(api_key)
+print(d_api_key)
