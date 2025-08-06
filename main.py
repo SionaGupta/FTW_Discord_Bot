@@ -1,1 +1,2 @@
-from discord-m import send_message
+from discordBot import send_message
+
