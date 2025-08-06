@@ -1,11 +1,1 @@
-import os
-from dotenv import load_dotenv
-
-# Load the .env file
-load_dotenv()
-
-# Get the API key
-api_key = os.getenv("API_KEY")
-
-# Print it
-print(api_key)
+from discord-m import send_message
