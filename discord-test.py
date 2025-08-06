@@ -1,14 +1,36 @@
 import os
+import discord
 from dotenv import load_dotenv
 
-# Load the .env file
 load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 
-# Get the API key
-d_api_key = os.getenv("DISCORD_API_KEY")
+# Not using intents
+intents = discord.Intents.none()
 
-# Establish the base URL 
-base_url = "https://discord.com/api"
+client = discord.Client(intents=intents)
 
-# Print it
-print(d_api_key)
+print(TOKEN)
+
+@client.event
+async def on_ready():
+    try:
+        print(f'Logged in as {client.user}')
+
+        channel_id = 1402467664189984798
+        channel = client.get_channel(channel_id)
+
+        if channel:
+            await channel.send("Hello from my bot!")
+        else:
+            print("Channel not found.")
+            
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+    await client.close()
+
+try:
+    client.run(TOKEN)
+except Exception as e:
+    print(f"🔥 Failed to connect: {e}")
