@@ -1,5 +1,5 @@
-import os
 from dotenv import load_dotenv
+import os
 
 # Load the .env file
 load_dotenv()
@@ -8,4 +8,4 @@ load_dotenv()
 api_key = os.getenv("API_KEY")
 
 # Print it
-print("Your API Key is:", api_key)
+print(api_key)
